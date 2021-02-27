@@ -16,4 +16,12 @@
     margin: 6px 6px;        
     border: 1px solid #33B5E5;
   } 
+  .product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1024px;
+    width: 100px;
+    margin-bottom: 10px;
+  }
   
