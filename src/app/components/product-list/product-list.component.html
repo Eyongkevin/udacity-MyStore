@@ -1,6 +1,9 @@
-<h1>Products</h1>
-
-<ul *ngFor="let product of products">
-  <li>{{ product.name }}</li>
-</ul>
-
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="column" fxLayoutAlign="space-between center" *ngFor="let product of products">
+        <div class="product-container">Image here</div>
+        <div class="product-container">{{ product.name }}</div>
+        <div class="product-container">{{ product.price}}</div>
+    </div>
+    </div>
+</div>
