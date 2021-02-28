@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductItemDetailComponent } from './components/product-item-detail/product-item-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CreateFormComponent } from './components/create-form/create-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CartComponent } from './components/cart/cart.component';
     HeaderComponent,
     ProductItemDetailComponent,
     NavbarComponent,
-    CartComponent
+    CartComponent,
+    CreateFormComponent
   ],
   imports: [
     BrowserModule,

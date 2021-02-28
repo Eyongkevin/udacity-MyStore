@@ -20,8 +20,9 @@
                 </div>
             </div>
         </div>
+        <div class="cart-item"><b>Total Price: ${{ totalPrice }}</b></div>
     </div>
     <div class="form-margin">
-            Form 
+            <app-create-form (checkoutSuccess)="checkoutSuccess($event)"></app-create-form>
     </div>
 </div>
