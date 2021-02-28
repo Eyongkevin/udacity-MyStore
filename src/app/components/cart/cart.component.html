@@ -1,1 +1,27 @@
-<p>cart works!</p>
+<div *ngIf="cartProducts" class="cart-container">
+    <div class="cart-item-details">
+        <div *ngFor="let cartProduct of cartProducts" class="cart-item">
+            <img class="" src='{{cartProduct.url}}'>
+            <div class="cart-panel">
+                <div class="product-item-detail">{{ cartProduct.name}}</div>
+                <div class="product-item-detail">$ {{ cartProduct.price}}</div>
+                <div class="product-item-detail">
+                    <select style="width: 100px;"  class=" form-select" aria-label="Default select example">
+                        <option 
+                            *ngFor="let product_option of product_count" 
+                            value="{{ product_option }}"
+                            [selected]="cartProduct.option === product_option">
+                            {{ product_option }}
+                        </option>
+                    </select>     
+                </div>
+                <div class="product-item-detail">
+                    <button  class="product-item-detail btn btn-primary">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-margin">
+            Form 
+    </div>
+</div>

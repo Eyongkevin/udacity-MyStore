@@ -17,8 +17,10 @@ export class ProductListComponent implements OnInit {
     this.productService.getProduct().subscribe(res =>{
       this.products = res;
     })
+    this.productService.clearCart();
+
   }
-  onSubmit(id: number, name: string, event: any): boolean{
+  onSubmit(cartProduct: Product, event: any): boolean{
     let newCartProduct: CartProduct[] = [];
     let message: string = '';
     let isCartOptionExist: boolean = false;
@@ -26,22 +28,22 @@ export class ProductListComponent implements OnInit {
     const selectedOption = event.target[0].options[event.target[0].options.selectedIndex].value;
     const cartProducts: CartProduct[] | [] = this.productService.getCartProduct();
 
-    const cartIdx = cartProducts.findIndex(cart => cart.id === id)
+    const cartIdx = cartProducts.findIndex(cart => cart.id === cartProduct.id)
     newCartProduct = cartProducts;
 
     if((cartIdx === -1) || (cartProducts.length === 0)){
-      newCartProduct.push({id: id, option: selectedOption})
-      message = `New Item '${name}' added to cart`;
+      newCartProduct.push(Object.assign(cartProduct, {option: selectedOption}))
+      message = `New Item '${cartProduct.name}' added to cart`;
     } else{
       const option: string = newCartProduct[cartIdx].option;
       isCartOptionExist = selectedOption === option
 
       if (isCartOptionExist){
-        message = `${option} Item(s) of '${name}' already exist in cart.`;
+        message = `${option} Item(s) of '${cartProduct.name}' already exist in cart.`;
       }else{
-        newCartProduct[cartIdx].id = id;
+        newCartProduct[cartIdx].id = cartProduct.id;
         newCartProduct[cartIdx].option = selectedOption;
-        message = `${option} Item(s) of '${name}' already exist in cart. Will be updated to ${selectedOption}`;
+        message = `${option} Item(s) of '${cartProduct.name}' already exist in cart. Will be updated to ${selectedOption}`;
       }
       
     }

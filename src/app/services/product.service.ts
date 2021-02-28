@@ -23,4 +23,7 @@ export class ProductService {
     const getProduct = this.myStorage.getItem('cart')
     return getProduct? JSON.parse(getProduct): [];
   }
+  clearCart(): void{
+    this.myStorage.clear();
+  }
 }
