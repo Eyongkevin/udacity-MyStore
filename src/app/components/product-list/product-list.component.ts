@@ -58,9 +58,6 @@ export class ProductListComponent implements OnInit {
   printLocalData(): void{
     console.log(this.productService.getCartProduct())
   }
-  // getProductNamebyId(id: number): string{
-  //   const idx = this.products.findIndex(cart => cart.id === id)
-  //   return idx != -1 ? this.products[idx].name : ''; 
-  // }
+
 
 }
