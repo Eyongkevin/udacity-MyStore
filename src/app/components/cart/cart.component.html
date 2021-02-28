@@ -1,4 +1,4 @@
-<div *ngIf="cartProducts" class="cart-container">
+<div *ngIf="cartProducts.length; else noCart" class="cart-container">
     <div class="cart-item-details">
         <div *ngFor="let cartProduct of cartProducts" class="cart-item">
             <img class="" src='{{cartProduct.url}}'>
@@ -26,3 +26,8 @@
             <app-create-form (checkoutSuccess)="checkoutSuccess($event)"></app-create-form>
     </div>
 </div>
+<ng-template #noCart>
+    <div class="empty-cart-message">
+    Cart is Empty! Please, <a routerLink="/"> add product to cart</a>. 
+    </div>
+</ng-template>
