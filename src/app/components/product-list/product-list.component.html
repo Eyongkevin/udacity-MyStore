@@ -1,7 +1,9 @@
 <div class="container">
     <div fxLayout="row wrap" fxLayoutAlign="space-between center">
     <div fxLayout="column" fxLayoutAlign="space-between center" *ngFor="let product of products">
-        <img class="product-image" src='{{ product.url }}'>
+        <a routerLink="item-detail/{{ product.id }}">
+            <img class="product-image" src='{{ product.url }}'>
+        </a>
         <div class="product-detail"><b>{{ product.name }}</b></div>
         <div class="product-detail">$ {{ product.price}}</div>
 
