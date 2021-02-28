@@ -26,4 +26,5 @@ export class ProductService {
   clearCart(): void{
     this.myStorage.clear();
   }
+  
 }
