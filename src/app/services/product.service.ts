@@ -19,8 +19,8 @@ export class ProductService {
   addToCart(product: CartProduct[]): void{
     this.myStorage.setItem('cart', JSON.stringify(product));
   }
-  getCartProduct(): CartProduct[] | null{
+  getCartProduct(): CartProduct[] | []{
     const getProduct = this.myStorage.getItem('cart')
-    return getProduct? JSON.parse(getProduct): null;
+    return getProduct? JSON.parse(getProduct): [];
   }
 }

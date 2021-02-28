@@ -5,7 +5,7 @@
         <div class="product-detail"><b>{{ product.name }}</b></div>
         <div class="product-detail">$ {{ product.price}}</div>
 
-        <form (submit)="onSubmit(product.id, $event)">
+        <form (submit)="onSubmit(product.id, product.name, $event)">
             <select  class="product-detail form-select" aria-label="Default select example">
                 <option selected value="1">1</option>
                 <option value="2">2</option>
