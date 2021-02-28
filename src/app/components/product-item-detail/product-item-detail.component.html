@@ -1,14 +1,14 @@
-<div class="detail-container">
-    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+<div *ngIf="product" class="detail-container">
+    <div  fxLayout="row wrap" fxLayoutAlign="space-between center">
         <div fxLayout="column" fxLayoutAlign="space-between center">
-            <img class="product-image" src='image.png'>
+            <img class="product-image" src='{{ product.url}}'>
         </div>
         <div class="detail-item">
-            <div class="product-item-detail product-title" ><b>Book</b></div>
-            <div class="product-item-detail" >$ 3443</div>
-            <div class="product-item-detail" >The best book ever</div>
+            <div class="product-item-detail product-title" ><b>{{ product.name }}</b></div>
+            <div class="product-item-detail" >$ {{ product.price }}</div>
+            <div class="product-item-detail" >{{ product.description }}</div>
 
-            <form>
+            <form (ngSubmit)="onSubmit(product.id, product.name, $event)">
                 <select style="width: 100px;"  class="product-item-detail form-select" aria-label="Default select example">
                     <option selected value="1">1</option>
                     <option value="2">2</option>
