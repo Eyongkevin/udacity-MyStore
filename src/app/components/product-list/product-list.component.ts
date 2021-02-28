@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/Product';
+import { Product, productCount } from '../../models/Product';
 import { CartProduct } from '../../models/CartProduct';
 import { ProductService } from '../../services/product.service';
 
@@ -10,6 +10,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  productCount: string[] = productCount;
 
   constructor(private productService: ProductService ) { }
 

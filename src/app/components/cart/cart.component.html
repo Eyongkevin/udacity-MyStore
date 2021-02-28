@@ -8,7 +8,7 @@
                 <div class="product-item-detail">
                     <select (change)="selectChange(cartProduct.id, $event)"  style="width: 100px;"  class="form-select" aria-label="Default select example">
                         <option 
-                            *ngFor="let product_option of product_count" 
+                            *ngFor="let product_option of productCount" 
                             [ngValue]="product_option"
                             [selected]="cartProduct.option === product_option">
                             {{ product_option }}
