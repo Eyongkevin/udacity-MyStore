@@ -44,9 +44,8 @@ export class CartComponent implements OnInit {
     this.totalPrice = Number(this.totalPrice.toFixed(2));
   }
   checkoutSuccess(firstName: string): void{
-    alert(firstName);
-    //this.route.navigateByUrl()
-
+    this.productService.clearCart();
+    this.route.navigateByUrl(`success/${firstName}/${this.totalPrice}`);
   }
 
 }

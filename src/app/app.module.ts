@@ -13,6 +13,7 @@ import { ProductItemDetailComponent } from './components/product-item-detail/pro
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CreateFormComponent } from './components/create-form/create-form.component';
+import { CheckoutSuccessComponent } from './components/checkout-success/checkout-success.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreateFormComponent } from './components/create-form/create-form.compon
     ProductItemDetailComponent,
     NavbarComponent,
     CartComponent,
-    CreateFormComponent
+    CreateFormComponent,
+    CheckoutSuccessComponent
   ],
   imports: [
     BrowserModule,
