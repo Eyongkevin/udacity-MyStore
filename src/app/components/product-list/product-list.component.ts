@@ -18,7 +18,6 @@ export class ProductListComponent implements OnInit {
     this.productService.getProduct().subscribe(res =>{
       this.products = res;
     })
-    this.productService.clearCart();
 
   }
   onSubmit(cartProduct: Product, event: any): boolean{
